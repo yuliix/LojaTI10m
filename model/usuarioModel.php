@@ -10,28 +10,28 @@ function inserirUsuario($conn,$nomeusu,$emailusu,$foneusu,$cpfusu,$tipousu,$cepu
     $dados = mysqli_query($conn,$query);
     return $dados; 
 
-}
+};
 
 function visuUsuarioNome($conn,$nomeusu){
     $query = "select * from tbusuario where nomeusu like '%{$nomeusu}%'";
     $resultado = mysqli_query($conn, $query);
     return $resultado;
     
-}
+};
 
 function visuUsuarioEmail($conn,$emailusu){
     $query = "select * from tbusuario where emailusu like '%{$emailusu}%'";
     $resultado = mysqli_query($conn, $query);
     return $resultado;
     
-}
+};
 function visuUsuarioCodigo($conn,$codigousu){
     $query = "select * from tbusuario where idusu = {$codigousu}";
     $resultado = mysqli_query($conn, $query);
     $resultado = mysqli_fetch_array($resultado);
     return $resultado;
     
-}
+};
 
 function alterarUsuario($conn,$codigousu,$nomeusu,$emailusu,$foneusu,$cpfusu,$tipousu,$cepusu,$numusu,$compleusu){
     $query = "update tbusuario set 
@@ -45,11 +45,10 @@ function alterarUsuario($conn,$codigousu,$nomeusu,$emailusu,$foneusu,$cpfusu,$ti
     compleusu='{$compleusu}' where idusu = '{$codigousu}'";
     $resultado = mysqli_query($conn, $query);
     return $resultado;
-}
-function deleteUsuario($conn,$codigousu){
-    $query = "delete from tbusuario where idusu= '{$codigousu}'";
+};
+function deletarUsuario($conn, $codigousu){
+    $query = "delete from tbusuario where idusu='{$codigousu}'";
     $resultado = mysqli_query($conn,$query);
     return $resultado;
-
-}
+};
 ?>

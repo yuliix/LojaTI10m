@@ -94,7 +94,7 @@ endforeach;
         var email = button.getAttribute('email');
         var modalBody = deletarUsuarioModal.querySelector('.modal-body');
         modalBody.textContent = 'Gostaria de excluir o E-mail ' + email + '?'
-
+        
         var Codigo = deletarUsuarioModal.querySelector('.modal-footer .codigo');
         Codigo.value = codigo;
       })
