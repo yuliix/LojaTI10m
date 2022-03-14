@@ -29,7 +29,7 @@ include_once("header.php");
       <label for="inputdata" class="form-label">Data De Lançamento</label>
       <input type="date" name="datalancamentojogo" class="form-control" id="inputdata" placeholder="INSIRA A DATA DE LANÇAMENTO DO JOGO" required>
     </div>
-    
+
     <div class="col-12">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck">

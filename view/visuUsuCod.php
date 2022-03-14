@@ -6,74 +6,74 @@ include_once("../model/usuarioModel.php");
 
 <div class="centroform">
 
-<form action="#" method="Post" class="row row-cols-lg-auto g-3 align-items-center">
-  <div class="col-12">
-    <label class="visually-hidden" for="inlineFormInputGroupUsername">Código do usuario</label>
-    <div class="input-group">
-      <div class="input-group-text">Código</div>
-      <input type="text" name="codigoUsu" class="form-control" id="inlineFormInputGroupUsername" placeholder="Código do usuario">
+  <form action="#" method="Post" class="row row-cols-lg-auto g-3 align-items-center">
+    <div class="col-12">
+      <label class="visually-hidden" for="inlineFormInputGroupUsername">Código do usuario</label>
+      <div class="input-group">
+        <div class="input-group-text">Código</div>
+        <input type="text" name="codigoUsu" class="form-control" id="inlineFormInputGroupUsername" placeholder="Código do usuario">
+      </div>
     </div>
-  </div>
 
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Pesquisar</button>
-  </div>
-</form>
-
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Pesquisar</button>
+    </div>
+  </form>
 
 
-<table class="table">
-  <thead>
-  <tr>
-      <th scope="col">codigo</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Email</th>
-      <th scope="col">Fone</th>
-      <th scope="col">Alterar</th>
-      <th scope="col">Excluir</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
-$codigousu = isset ($_POST["codigoUsu"])? $_POST["codigoUsu"]:"" ;
 
-if($codigousu){
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">codigo</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Fone</th>
+        <th scope="col">Alterar</th>
+        <th scope="col">Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      $codigousu = isset ($_POST["codigoUsu"])? $_POST["codigoUsu"]:"" ;
 
-$dado = visuUsuarioCodigo($conn,$codigousu);
+      if($codigousu){
 
-if($dado){
+        $dado = visuUsuarioCodigo($conn,$codigousu);
 
-?>
-    <tr>
-      <th scope="row"><?=$dado["idusu"] ?></th>
-      <td><?=$dado["nomeusu"] ?></td>
-      <td><?=$dado["emailusu"] ?></td>
-      <td><?=$dado["foneusu"] ?></td>
-      <td>
-      <form action="../view/alterarForm.php" method="post">
-      
-      <input type="hidden" value="<?=$dado["idusu"] ?>" name="idusu">
-      <button type="submit" class="btn btn-primary">Alterar</button>
+        if($dado){
 
-      </form>
+          ?>
+          <tr>
+            <th scope="row"><?=$dado["idusu"] ?></th>
+            <td><?=$dado["nomeusu"] ?></td>
+            <td><?=$dado["emailusu"] ?></td>
+            <td><?=$dado["foneusu"] ?></td>
+            <td>
+              <form action="../view/alterarform.php" method="post">
 
-    </td>
-      <td>
+                <input type="hidden" value="<?=$dado["idusu"] ?>" name="idusu">
+                <button type="submit" class="btn btn-primary">Alterar</button>
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-danger" codigo="<?=$dado["idusu"] ?>" email="<?=$dado["emailusu"]?>" data-bs-toggle="modal" data-bs-target="#deleteModal">
-        Excluir
-        </button>
+              </form>
 
-     
-      </td>
-    </tr>
-    <?php
-    }
-    }
-    ?>
-  </tbody>
-</table>
+            </td>
+            <td>
+
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-danger" codigo="<?=$dado["idusu"] ?>" email="<?=$dado["emailusu"]?>" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Excluir
+              </button>
+
+
+            </td>
+          </tr>
+          <?php
+        }
+      }
+      ?>
+    </tbody>
+  </table>
 
 </div>
 
@@ -89,12 +89,12 @@ if($dado){
         .
       </div>
       <div class="modal-footer">
-      <form action="../controler/deletarUsu.php" method="get">
-      
-      <input type="hidden" value="" class="codigo from-control" name="codigousu">
-      <button type="submit" class="btn btn-danger">Excluir</button>
+        <form action="../controler/deletarUsuario.php" method="get">
 
-      </form>
+          <input type="hidden" value="" class="codigo from-control" name="codigousu">
+          <button type="submit" class="btn btn-danger">Excluir</button>
+
+        </form>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </div>
@@ -102,20 +102,20 @@ if($dado){
 </div>
 
 <script>
-    var deletarUsuarioModal = document.getElementById('deleteModal');
-    deletarUsuarioModal.addEventListener('show.bs.modal',function(event){
-      var button = event.relatedTarget;
-      var codigo = button.getAttribute('codigo');
-      var email = button.getAttribute('email');
+var deletarUsuarioModal = document.getElementById('deleteModal');
+deletarUsuarioModal.addEventListener('show.bs.modal',function(event){
+  var button = event.relatedTarget;
+  var codigo = button.getAttribute('codigo');
+  var email = button.getAttribute('email');
 
-      var modalBody = deletarUsuarioModal.querySelector('.modal-body');
-      modalBody.textContent = 'Deseja realmente excluir o usuario do código ' + codigo + '?'
+  var modalBody = deletarUsuarioModal.querySelector('.modal-body');
+  modalBody.textContent = 'Deseja realmente excluir o usuario do código ' + codigo + '?'
 
-      var Codigo =  deletarUsuarioModal.querySelector('.modal-footer .codigo');
-      Codigo.value = codigo;
+  var Codigo =  deletarUsuarioModal.querySelector('.modal-footer .codigo');
+  Codigo.value = codigo;
 
-    })
-  </script>
+})
+</script>
 
 <?php
 

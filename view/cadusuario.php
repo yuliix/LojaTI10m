@@ -30,9 +30,9 @@ include_once("header.php");
       <input type="number" name="numusu" class="form-control" id="inputNumero" placeholder="00" required>
     </div>
     <div class="col-md-2">
-    <label for="inputComple" class="form-label">Complemento</label>
-    <input type="text" name="compleusu" class="form-control" id="inputComple" placeholder="apto, casa, proximo de..">
-  </div>
+      <label for="inputComple" class="form-label">Complemento</label>
+      <input type="text" name="compleusu" class="form-control" id="inputComple" placeholder="apto, casa, proximo de..">
+    </div>
     <div class="col-md-6">
       <label for="inputTipo" class="form-label">Tipo de usuário</label>
       <select id="inputTipo" name="tipousu" class="form-select">
@@ -41,7 +41,7 @@ include_once("header.php");
         <option value="2"> Cliente</option>
       </select>
     </div>
-    
+
     <div class="col-12">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck">
