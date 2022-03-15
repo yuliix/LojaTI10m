@@ -4,10 +4,10 @@ include_once("../model/conexao.php");
 include_once("../model/usuarioModel.php");
 ?>
 
-<div class="centroform">
+<div class="container mt-5">
 
   <form action="#" method="Post" class="row row-cols-lg-auto g-3 align-items-center">
-    <div class="col-12">
+    <div class="col-8">
       <label class="visually-hidden" for="inlineFormInputGroupUsername">Código do usuario</label>
       <div class="input-group">
         <div class="input-group-text">Código</div>
@@ -15,17 +15,17 @@ include_once("../model/usuarioModel.php");
       </div>
     </div>
 
-    <div class="col-12">
+    <div class="col-22">
       <button type="submit" class="btn btn-primary">Pesquisar</button>
     </div>
   </form>
 
 
 
-  <table class="table">
+  <table class="table mt-5">
     <thead>
       <tr>
-        <th scope="col">codigo</th>
+        <th scope="col">Codigo</th>
         <th scope="col">Nome</th>
         <th scope="col">Email</th>
         <th scope="col">Fone</th>

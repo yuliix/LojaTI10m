@@ -1,14 +1,14 @@
 <?php
 include_once("../model/conexao.php");
-include_once("../model/usuarioModel.php");
+include_once("../model/jogoModel.php");
 include_once("../view/header.php");
 
 extract($_REQUEST,EXTR_OVERWRITE);
 
-if(deletarUsuario($conn,$codigousu)){
-  echo("Usuario excluido com sucesso.");
+if(deletarUsuario($conn,$codigojogo)){
+  echo("Jogo excluido com sucesso.");
 }else{
-  echo("Usuário não Excluido.");
+  echo("Jogo não Excluido.");
 }
 
 include_once("../view/footer.php");

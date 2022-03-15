@@ -7,10 +7,10 @@ include_once("../model/jogoModel.php");
 ?>
 
 
-<div class="centroform">
+<div class="container mt-5">
 
   <form action="#" method="Post" class="row row-cols-lg-auto g-3 align-items-center">
-    <div class="col-12">
+    <div class="col-8">
       <label class="visually-hidden" for="inlineFormInputGroupUsername">Código do jogo</label>
       <div class="input-group">
         <div class="input-group-text">Código</div>
@@ -18,14 +18,14 @@ include_once("../model/jogoModel.php");
       </div>
     </div>
 
-    <div class="col-12">
+    <div class="col-2">
       <button type="submit" class="btn btn-primary">Pesquisar</button>
     </div>
   </form>
 
 
 
-  <table class="table">
+  <table class="table mt-5">
     <thead>
       <tr>
         <th scope="col">Codigo</th>
