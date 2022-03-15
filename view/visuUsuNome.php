@@ -10,8 +10,7 @@ include_once("../model/usuarioModel.php");
       <label class="visually-hidden" for="inlineFormInputGroupUsername">Digite o Nome do Usuário</label>
       <div class="input-group">
         <div class="input-group-text">Nome</div>
-        <input type="text" name="nomeUsu" class="form-control" id="inlineFormInputGroupUsername"
-        placeholder="Nome do Usuário">
+        <input type="text" name="nomeUsu" class="form-control" id="inlineFormInputGroupUsername"placeholder="Nome do Usuário">
       </div>
     </div>
     <div class="col-2">

@@ -3,13 +3,10 @@
 include_once("../view/header.php");
 include_once("../model/conexao.php");
 include_once("../model/jogoModel.php");
-
 ?>
 
-
 <div class="container mt-5">
-
-  <form action="#" method="Post" class="row row-cols-lg-auto g-3 align-items-center">
+  <form action="#" method="Post" class="row row-cols-lg-auto   justify-content-lg-center g-3 align-items-center">
     <div class="col-8">
       <label class="visually-hidden" for="inlineFormInputGroupUsername">Nome do jogo</label>
       <div class="input-group">
@@ -17,13 +14,10 @@ include_once("../model/jogoModel.php");
         <input type="text" name="nomeJogo" class="form-control" id="inlineFormInputGroupUsername" placeholder="Nome do jogo">
       </div>
     </div>
-
     <div class="col-2">
       <button type="submit" class="btn btn-primary">Pesquisar</button>
     </div>
   </form>
-
-
 
   <table class="table mt-5">
     <thead>
@@ -39,25 +33,35 @@ include_once("../model/jogoModel.php");
     </thead>
     <tbody>
       <?php
-      $nomejogo = isset ($_POST["nomeJogo"])? $_POST["nomeJogo"]:"" ;
+      $nomejogo = isset ($_POST["nomeJogo"])? $_POST["nomeJogo"] : "" ;
 
-      if($nomejogo){
+      $dado = visuJogoNome($conn,$nomejogo);
 
-        $dado = visuJogoNome($conn,$nomejogo);
+      foreach($dado as $nomeJogo):
+        ?>
+        <tr>
+          <th scope="row"><?=$nomeJogo["idjogo"];?></th>
+          <td><?=$nomeJogo["nomejogo"]?></td>
+          <td><?=$nomeJogo["valorjogo"]?></td>
+          <td><?=$nomeJogo["qtdjogo"]?></td>
+          <td><?=$nomeJogo["generojogo"]?></td>
+          <td>
+            <form action="../view/alterarformjogo.php" method="POST">
+              <input type="hidden" value="<?=$nomeJogo["idjogo"]?>" name="codigojogo">
+              <button type="submit" class="btn btn-primary">Alterar</button>
+            </form>
 
-        foreach($dado as $nomeJogo):
-          ?>
-          <tr>
-            <th scope="row"><?=$nomeJogo["idjogo"] ?></th>
-            <td><?=$nomeJogo["nomejogo"] ?></td>
-            <td><?=$nomeJogo["valorjogo"] ?></td>
-            <td><?=$nomeJogo["qtdjogo"] ?></td>
-            <td><?=$nomeJogo["generojogo"] ?></td>
-          </tr>
-          <?php
-        endforeach;
-      }
+          </td>
+          <td> <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" codigo="<?=$nomeJogo["idjogo"]?>" nome="<?=$nomeJogo["nomejogo"]?>" data-bs-toggle="modal" data-bs-target="#deleteModal">
+              Apagar
+            </button>
+          </td>
+        </tr>
+        <?php
+      endforeach;
       ?>
+
     </tbody>
   </table>
 
@@ -86,15 +90,15 @@ include_once("../model/jogoModel.php");
 </div>
 
 <script>
-var deletarJogoModal = document.getElementById('deleteModal');
-deletarJogoModal.addEventListener('show.bs.modal',function(event){
+var deletarUsuarioModal = document.getElementById('deleteModal');
+deletarUsuarioModal.addEventListener('show.bs.modal',function(event){
   var button = event.relatedTarget;
   var codigo = button.getAttribute('codigo');
-  var nome = button.getAttribute('nome');
-  var modalBody = deletarJogoModal.querySelector('.modal-body');
-  modalBody.textContent = 'Gostaria de excluir o Jogo ' + nomejogo + '?'
+  var email = button.getAttribute('email');
+  var modalBody = deletarUsuarioModal.querySelector('.modal-body');
+  modalBody.textContent = 'Gostaria de excluir o Usuario ' + email + '?'
 
-  var Codigo = deletarJogoModal.querySelector('.modal-footer .codigo');
+  var Codigo = deletarUsuarioModal.querySelector('.modal-footer .codigo');
   Codigo.value = codigo;
 })
 

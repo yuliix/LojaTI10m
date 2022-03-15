@@ -5,14 +5,15 @@ include_once("../model/jogoModel.php");
 
 extract($_REQUEST,EXTR_OVERWRITE);
 
-$informa = visuJogoNomeCodigo($conn, $codigojogo);
+$informa = visuJogoCodigo($conn, $codigojogo);
 
 ?>
 
 <div class="container">
-  <form class="row g-3" action="../controler/alterarJogo.php" method="post">
-    <input type="hidden" name="codigojogo" value="<?=$informa["idjogo"]?>">
-    <div class="col-md-6">
+
+    <form class="row g-3" action="../controler/alterarJogo.php" method="post">
+        <input type="hidden" name="idjogo" value="<?= $informa["idjogo"] ?>">
+        <div class="col-md-6">
       <label for="inputJogo" class="form-label">Nome do Jogo</label>
       <input type="text" name="nomejogo" value="<?=$informa["nomejogo"]?>" class="form-control" id="inputJogo">
     </div>
