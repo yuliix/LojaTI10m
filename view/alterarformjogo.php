@@ -5,7 +5,7 @@ include_once("../model/jogoModel.php");
 
 extract($_REQUEST,EXTR_OVERWRITE);
 
-$informa = visuJogoCodigo($conn, $codigojogo);
+$informa = visuJogoCodigo($conn,$idjogo);
 
 ?>
 
@@ -37,6 +37,19 @@ $informa = visuJogoCodigo($conn, $codigojogo);
       <label for="inputStudio" class="form-label">Studio do Jogo</label>
       <input type="text" name="studiojogo" value="<?=$informa["studiojogo"]?>" class="form-control" id="inputStudio">
     </div>
+    <div class="col-md-6">
+    <label for="inputGenero" class="form-label">Tipo de jogo</label>
+    <select id="inputGenero" name="generojogo"  class="form-select">
+    <option selected value="<?= $informa["generojogo"] ?>"> <?= $informa["generojogo"] ?> </option>
+        <option value="RPG">RPG</option>
+        <option value="Aventura">Aventura</option>
+        <option value="Puzzle">Puzzle</option>
+        <option value="FPS">FPS</option>
+        <option value="Corrida">Corrida</option>
+        <option value="Outro">Outro</option>
+    </select>
+
+</div>
     <div class="col-12">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -54,3 +67,7 @@ $informa = visuJogoCodigo($conn, $codigojogo);
 </div>
 
 </div>
+
+<?php
+include_once("footer.php");
+ ?>

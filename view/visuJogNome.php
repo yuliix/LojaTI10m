@@ -6,7 +6,7 @@ include_once("../model/jogoModel.php");
 ?>
 
 <div class="container mt-5">
-  <form action="#" method="Post" class="row row-cols-lg-auto   justify-content-lg-center g-3 align-items-center">
+  <form action="#" method="Post" class="row row-cols-auto   justify-content-lg-center g-3 align-items-center">
     <div class="col-8">
       <label class="visually-hidden" for="inlineFormInputGroupUsername">Nome do jogo</label>
       <div class="input-group">
@@ -47,7 +47,7 @@ include_once("../model/jogoModel.php");
           <td><?=$nomeJogo["generojogo"]?></td>
           <td>
             <form action="../view/alterarformjogo.php" method="POST">
-              <input type="hidden" value="<?=$nomeJogo["idjogo"]?>" name="codigojogo">
+              <input type="hidden" value="<?=$nomeJogo["idjogo"]?>" name="idjogo">
               <button type="submit" class="btn btn-primary">Alterar</button>
             </form>
 
@@ -79,7 +79,7 @@ include_once("../model/jogoModel.php");
       </div>
       <div class="modal-footer">
         <form action="../controler/deletarJogo.php" method="Get">
-          <input type="hidden" class="codigo form-control" name="codigojogo">
+          <input type="hidden" class="codigo form-control" name="idjogo">
           <button type="submit" class="btn btn-danger">Sim</button>
         </form>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>

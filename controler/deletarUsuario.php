@@ -5,7 +5,7 @@ include_once("../view/header.php");
 
 extract($_REQUEST,EXTR_OVERWRITE);
 
-if(deletarUsuario($conn,$codigousu)){
+if(deletarUsuario($conn,$idusu)){
   echo("Usuario excluido com sucesso.");
 }else{
   echo("Usuário não Excluido.");

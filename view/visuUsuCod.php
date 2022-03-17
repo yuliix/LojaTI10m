@@ -5,8 +5,7 @@ include_once("../model/usuarioModel.php");
 ?>
 
 <div class="container mt-5">
-
-  <form action="#" method="Post" class="row row-cols-lg-auto g-3 align-items-center">
+  <form action="#" method="Post" class="row row-cols-auto   justify-content-lg-center g-3 align-items-center">
     <div class="col-8">
       <label class="visually-hidden" for="inlineFormInputGroupUsername">Código do usuario</label>
       <div class="input-group">

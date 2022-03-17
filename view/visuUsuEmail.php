@@ -44,7 +44,7 @@ include_once("../model/usuarioModel.php");
           <td><?=$emailUsuarios["foneusu"]?></td>
           <td>
             <form action="../view/alterarform.php" method="POST">
-              <input type="hidden" value="<?=$emailUsuarios["idusu"]?>" name="codigousu">
+              <input type="hidden" value="<?=$emailUsuarios["idusu"]?>" name="idusu">
               <button type="submit" class="btn btn-primary">Alterar</button>
             </form>
 
@@ -76,7 +76,7 @@ include_once("../model/usuarioModel.php");
       </div>
       <div class="modal-footer">
         <form action="../controler/deletarUsuario.php" method="Get">
-          <input type="hidden" class="codigo form-control" name="codigousu">
+          <input type="hidden" class="codigo form-control" name="idusu">
           <button type="submit" class="btn btn-danger">Sim</button>
         </form>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
