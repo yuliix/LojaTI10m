@@ -5,7 +5,7 @@ include_once("../view/header.php");
 
 extract($_REQUEST,EXTR_OVERWRITE);
 
-if(deletarJogo($conn,$idjogo)){
+if(deletarJogo($conn,$codigojogo)){
   echo("Jogo excluido com sucesso.");
 }else{
   echo("Jogo não Excluido.");

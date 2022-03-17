@@ -10,10 +10,10 @@ include_once("../model/jogoModel.php");
 <div class="container mt-5">
   <form action="#" method="Post" class="row row-cols-auto   justify-content-lg-center g-3 align-items-center">
     <div class="col-8">
-      <label class="visually-hidden" for="inlineFormInputGroupUsername">Nome do jogo</label>
+      <label class="visually-hidden" for="inlineFormInputGroupUsername">Codigo do jogo</label>
       <div class="input-group">
-        <div class="input-group-text">Nome</div>
-        <input type="text" name="nomeJogo" class="form-control" id="inlineFormInputGroupUsername" placeholder="Nome do jogo">
+        <div class="input-group-text">Código</div>
+        <input type="text" name="codigoJogo" class="form-control" id="inlineFormInputGroupUsername" placeholder="Codigo do jogo">
       </div>
     </div>
     <div class="col-2">
@@ -45,7 +45,7 @@ include_once("../model/jogoModel.php");
 
         if ($dado) {
 
-          ?>
+      ?>
           <tr>
             <th scope="row"><?= $dado["idjogo"] ?></th>
             <td><?= $dado["nomejogo"] ?></td>
@@ -69,7 +69,7 @@ include_once("../model/jogoModel.php");
             </td>
 
           </tr>
-          <?php
+      <?php
         }
       }
       ?>
@@ -103,19 +103,19 @@ include_once("../model/jogoModel.php");
 </div>
 
 <script>
-var deletarUsuarioModal = document.getElementById('deleteModal');
-deletarUsuarioModal.addEventListener('show.bs.modal', function(event) {
-  var button = event.relatedTarget;
-  var codigo = button.getAttribute('codigo');
-  var nome = button.getAttribute('nome');
+  var deletarUsuarioModal = document.getElementById('deleteModal');
+  deletarUsuarioModal.addEventListener('show.bs.modal', function(event) {
+    var button = event.relatedTarget;
+    var codigo = button.getAttribute('codigo');
+    var nome = button.getAttribute('nome');
 
-  var modalBody = deletarUsuarioModal.querySelector('.modal-body');
-  modalBody.textContent = 'Deseja realmente excluir o Jogo ' + nome + '?'
+    var modalBody = deletarUsuarioModal.querySelector('.modal-body');
+    modalBody.textContent = 'Deseja realmente excluir o Jogo ' + nome + '?'
 
-  var Codigo = deletarUsuarioModal.querySelector('.modal-footer .codigo');
-  Codigo.value = codigo;
+    var Codigo = deletarUsuarioModal.querySelector('.modal-footer .codigo');
+    Codigo.value = codigo;
 
-})
+  })
 </script>
 
 <?php
