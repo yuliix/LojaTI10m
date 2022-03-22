@@ -20,22 +20,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../view/index.php">Home</a>
+            <a class="nav-link active" aria-current="page" href="../view/indexAdm.php">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Usuários
             </a>
+
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="../view/cadusuario.php">Cadastrar</a></li>
+              <li><a class="dropdown-item" href="../view/login.php">Login</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
               <li><a class="dropdown-item" href="../view/visuUsuNome.php">Pesquisar por Nome</a></li>
               <li><a class="dropdown-item" href="../view/visuUsuCod.php">Pesquisar por Código</a></li>
               <li><a class="dropdown-item" href="../view/visuUsuEmail.php">Pesquisar por Email</a></li>
-
-
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -57,6 +57,7 @@
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Digite aqui!" aria-label="Search">
           <button class="btn btn-outline-primary" type="submit">Pesquisar</button>
+          <button class="login" type="submit" href="#">Login</button>
         </form>
       </div>
     </div>

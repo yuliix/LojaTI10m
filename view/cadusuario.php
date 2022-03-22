@@ -33,6 +33,14 @@ include_once("header.php");
       <label for="inputComple" class="form-label">Complemento</label>
       <input type="text" name="compleusu" class="form-control" id="inputComple" placeholder="apto, casa, proximo de..">
     </div>
+    <div class="col-md-4"method="GET">
+      <label for="inputSenha" class="form-label">Senha</label>
+      <input type="password" name="senhausu" class="form-control" id="inputSenha" placeholder="Digite a seha de acesso" required>
+    </div>
+    <div class="col-md-4">
+      <label for="inputPin" class="form-label">Pin</label>
+      <input type="text" name="pinusu" class="form-control" required id="inputPin" placeholder="..." >
+    </div>
     <div class="col-md-6">
       <label for="inputTipo" class="form-label">Tipo de usuário</label>
       <select id="inputTipo" name="tipousu" class="form-select">
